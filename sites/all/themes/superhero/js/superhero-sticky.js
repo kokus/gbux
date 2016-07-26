@@ -11,7 +11,8 @@
 				$stickywrapper.height($this.outerHeight());
 			},10);
 			$(window).scroll(function(){
-				if($(window).width() < 992 || $('body').hasClass('header-overlay')) return;
+				// removed to enable sticky on responsive
+				//if($(window).width() < 992 || $('body').hasClass('header-overlay')) return;
 				var offsetTop = $(window).scrollTop();
 				if (offsetTop > $this.data('offset-top')){
 					$this.addClass('fixed');
@@ -23,9 +24,10 @@
 			}).resize(function(){
 				$this.removeClass('fixed fixed-transition').data('offset-top',$this.offset().top);
 				$(window).scroll();
-				if($(window).width() < 992 || $('body').hasClass('header-overlay')){
-					$this.removeClass('fixed fixed-transition');
-				}
+				// removed to enable sticky on responsive
+				//if($(window).width() < 992 || $('body').hasClass('header-overlay')){
+				//	$this.removeClass('fixed fixed-transition');
+				//}
 			}).scroll().resize();
 		});
 	}
