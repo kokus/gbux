@@ -494,3 +494,15 @@ b, strong {
     }
 }
 
+.image-panel {
+    position: relative;
+}
+
+.image-panel p {
+    position: absolute;
+    top: calc(50% - 24px);
+    text-align: center;
+    width: 10;
+}
+
+
