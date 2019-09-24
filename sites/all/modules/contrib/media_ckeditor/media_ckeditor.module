@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Primarily Drupal hooks.
+ */
+
+/**
+ * Implements hook_js_alter().
+ *
+ * @todo: remove this when https://www.drupal.org/node/2542566 is fixed.
+ */
+function media_ckeditor_js_alter(&$javascript) {
+  $path = drupal_get_path('module', 'ckeditor') . '/plugins/media/library.js';
+
+  // Remove the default CKEditor Media plugin library JS.
+  if (isset($javascript[$path])) {
+    unset($javascript[$path]);
+  }
+}
