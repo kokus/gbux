@@ -1621,7 +1621,9 @@ class scssc {
 
 		foreach ($args as $arg) {
 			list($key, $value) = $arg;
-			$key = $key[1];
+			if (isset($key)) {
+				$key = $key[1];
+			}
 			if (empty($key)) {
 				$posArgs[] = $value;
 			} else {
